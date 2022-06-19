@@ -4,3 +4,7 @@ dist
 dist-ssr
 *.local
 .env
+
+# lock
+yarn.lock
+package-lock.json
