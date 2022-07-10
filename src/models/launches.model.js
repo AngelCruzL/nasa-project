@@ -1,5 +1,7 @@
 const launches = new Map();
 
+const launchesDB = require('./launches.mongo');
+
 let latestFlightNumber = 100;
 
 const launch = {
@@ -10,13 +12,27 @@ const launch = {
   target: 'Kepler-442 b',
   customers: ['NASA', 'Angel Cruz'],
   upcoming: true,
-  success: true
+  success: true,
 };
+
+saveLaunch(launch);
 
 launches.set(launch.flightNumber, launch);
 
-function getAllLaunches() {
-  return Array.from(launches.values());
+async function getAllLaunches() {
+  return await launchesDB.find(
+    {},
+    {
+      __v: 0,
+      _id: 0,
+    }
+  );
+}
+
+async function saveLaunch(launch) {
+  await launchesDB.updateOne({ flightNumber: launch.flightNumber }, launch, {
+    upsert: true,
+  });
 }
 
 function addNewLaunch(launch) {
@@ -28,7 +44,7 @@ function addNewLaunch(launch) {
       flightNumber: latestFlightNumber,
       customers: ['NASA', 'Angel Cruz'],
       upcoming: true,
-      success: true
+      success: true,
     })
   );
 }
@@ -48,5 +64,5 @@ module.exports = {
   getAllLaunches,
   addNewLaunch,
   existsLaunchWithId,
-  abortLaunchById
+  abortLaunchById,
 };
