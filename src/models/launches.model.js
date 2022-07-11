@@ -1,24 +1,7 @@
 const launchesDB = require('./launches.mongo');
 const planets = require('./planets.mongo');
 
-const launches = new Map();
-
 const DEFAULT_FLIGHT_NUMBER = 100;
-
-const launch = {
-  flightNumber: 100,
-  mission: 'Kepler Exploration X',
-  rocket: 'Explorer IS1',
-  launchDate: new Date('December 27, 2030'),
-  target: 'Kepler-442 b',
-  customers: ['NASA', 'Angel Cruz'],
-  upcoming: true,
-  success: true,
-};
-
-saveLaunch(launch);
-
-launches.set(launch.flightNumber, launch);
 
 async function getAllLaunches() {
   return await launchesDB.find(
@@ -60,15 +43,18 @@ async function scheduleNewLaunch(launch) {
   await saveLaunch(newLaunch);
 }
 
-function existsLaunchWithId(launchId) {
-  return launches.has(launchId);
+async function existsLaunchWithId(launchId) {
+  return await launchesDB.findOne({ flightNumber: launchId });
 }
 
-function abortLaunchById(launchId) {
-  const aborted = launches.get(launchId);
-  aborted.upcoming = false;
-  aborted.success = false;
-  return aborted;
+async function abortLaunchById(launchId) {
+  return await launchesDB.updateOne(
+    { flightNumber: launchId },
+    {
+      upcoming: false,
+      success: false,
+    }
+  );
 }
 
 module.exports = {
