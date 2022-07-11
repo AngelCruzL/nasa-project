@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = 'http://localhost:8000/api/v1';
 
 async function httpGetPlanets() {
   const response = await fetch(`${API_URL}/planets`);
@@ -42,3 +42,4 @@ async function httpAbortLaunch(id) {
 }
 
 export { httpGetPlanets, httpGetLaunches, httpSubmitLaunch, httpAbortLaunch };
+
