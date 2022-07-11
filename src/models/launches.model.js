@@ -48,13 +48,15 @@ async function existsLaunchWithId(launchId) {
 }
 
 async function abortLaunchById(launchId) {
-  return await launchesDB.updateOne(
+  const aborted = await launchesDB.updateOne(
     { flightNumber: launchId },
     {
       upcoming: false,
       success: false,
     }
   );
+
+  return aborted.modifiedCount === 1;
 }
 
 module.exports = {
