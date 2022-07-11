@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config();
 
 mongoose.connection.on('open', () => {
   console.log('Database online');
