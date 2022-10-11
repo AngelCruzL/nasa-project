@@ -13,21 +13,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2",
-    "cors": "^2.8.5",
-    "csv-parse": "^5.2.0",
-    "dotenv": "^16.0.1",
+    "axios": "0.27.2",
+    "cors": "2.8.5",
+    "csv-parse": "5.2.0",
+    "dotenv": "16.0.1",
     "express": "4.18.1",
-    "mongoose": "^6.4.4",
-    "morgan": "^1.10.0",
-    "pm2": "^5.2.0"
+    "mongoose": "6.4.4",
+    "morgan": "1.10.0",
+    "pm2": "5.2.0"
   },
   "jest": {
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "jest": "^28.1.1",
+    "jest": "28.1.1",
     "nodemon": "2.0.16",
-    "supertest": "^6.2.3"
+    "supertest": "6.2.3"
   }
 }
