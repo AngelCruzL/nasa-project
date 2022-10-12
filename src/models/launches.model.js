@@ -69,14 +69,11 @@ async function populateLaunches() {
   }
 }
 
-async function getAllLaunches() {
-  return await launchesDB.find(
-    {},
-    {
-      __v: 0,
-      _id: 0,
-    }
-  );
+async function getAllLaunches(skipValue, limitValue) {
+  return await launchesDB
+    .find({}, { __v: 0, _id: 0 })
+    .skip(skipValue)
+    .limit(limitValue);
 }
 
 async function getLatestFlightNumber() {
