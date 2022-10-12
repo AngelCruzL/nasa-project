@@ -72,6 +72,7 @@ async function populateLaunches() {
 async function getAllLaunches(skipValue, limitValue) {
   return await launchesDB
     .find({}, { __v: 0, _id: 0 })
+    .sort({ flightNumber: 1 })
     .skip(skipValue)
     .limit(limitValue);
 }
