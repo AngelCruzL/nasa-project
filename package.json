@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "cd server && npm install",
-    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "install-client": "cd client && npm install",
     "install": "concurrently \"npm run install-server\" \"npm run install-client\"",
     "server": "cd server && npm run dev",
     "client": "cd client && npm run start",
