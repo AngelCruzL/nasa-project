@@ -5,7 +5,3 @@ dist-ssr
 *.local
 .env
 public
-
-# lock
-yarn.lock
-package-lock.json
