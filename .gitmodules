@@ -1,6 +1,0 @@
-[submodule "server"]
-	path = server
-	url = https://github.com/AngelCruzL/node-nasa
-[submodule "client"]
-	path = client
-	url = https://github.com/AngelCruzL/react-nasa
