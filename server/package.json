@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "jest --watch --detectOpenHandles",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch",
     "start": "set PORT=8000&& node src/server.js",
     "dev": "nodemon src/server.js",
     "cluster": "pm2 start src/server.js -i max"
