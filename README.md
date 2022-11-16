@@ -1,6 +1,6 @@
 # NASA Project
 
-This is a mono repo project base from a NASA's dashboard with the launches information from 2006 to actual date.
+This is a mono repo project base from a NASA's dashboard with the launches information from 2006 to current date.
 
 ## Technologies
 
@@ -10,6 +10,7 @@ This is a mono repo project base from a NASA's dashboard with the launches infor
 - Express
 - GH Actions
 - Docker
+- AWS
 
 ## Prerequisites
 
@@ -31,3 +32,14 @@ This is a mono repo project base from a NASA's dashboard with the launches infor
     ```sh
     npm install
     ```
+
+You also can see the app running downloading the image from Docker Hub
+
+```sh
+docker pull angelcruzl/nasa-project
+```
+
+## Deployment
+
+- [Docker Hub](https://hub.docker.com/repository/docker/angelcruzl/nasa-project)
+- [AWS EC2 Instance](http://54.196.139.155:8000/history)
