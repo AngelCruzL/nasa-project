@@ -42,4 +42,4 @@ docker pull angelcruzl/nasa-project
 ## Deployment
 
 - [Docker Hub](https://hub.docker.com/repository/docker/angelcruzl/nasa-project)
-- [AWS EC2 Instance](http://54.196.139.155:8000/history)
+- [AWS EC2 Instance](http://54.196.139.155:8000)
