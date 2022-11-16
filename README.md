@@ -8,10 +8,13 @@ This is a mono repo project base from a NASA's dashboard with the launches infor
 - MongoDB
 - Node
 - Express
+- GH Actions
+- Docker
 
 ## Prerequisites
 
 - [Node](https://nodejs.org/en/)
+- [Docker](https://www.docker.com/)
 
 ## Installation
 
