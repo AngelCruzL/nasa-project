@@ -1,4 +1,4 @@
-const axios = require('axios').default;
+const axios = require('axios');
 
 const launchesDB = require('./launches.mongo');
 const planets = require('./planets.mongo');
